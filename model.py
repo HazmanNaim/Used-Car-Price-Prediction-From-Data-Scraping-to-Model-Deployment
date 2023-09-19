@@ -2,8 +2,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
-import warnings
 
 # Import data
 data = pd.read_csv('cleaned_data.csv')
@@ -35,7 +33,6 @@ transformer = ColumnTransformer(transformers=[('cat', OneHotEncoder(handle_unkno
 
 # Model development
 from sklearn.model_selection import train_test_split
-import pickle
 
 x_data = df.drop(response, axis=1)
 y_data = df[response]
