@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Learning API Test</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Used Car Pricing Predictor</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <form action="{{ url_for('predict')}}" method="post">
+        <label for="Assembled">Assembled:</label>
+        <select name="Assembled" id="Assembled" required>
+            <option value="Official Import" {% if Assembled == 'Official Import' %}selected{% endif %}>Official Import</option>
+            <option value="Parallel Import" {% if Assembled == 'Parallel Import' %}selected{% endif %}>Parallel Import</option>
+            <option value="Locally Built" {% if Assembled == 'Locally Built' %}selected{% endif %}>Locally Built</option>
+        </select>
+
+        <label for="brand_tier">Brand Tier:</label>
+        <select name="brand_tier" id="brand_tier" required>
+            <option value="S" {% if brand_tier == 'S' %}selected{% endif %}>S</option>
+            <option value="A" {% if brand_tier == 'A' %}selected{% endif %}>A</option>
+            <option value="B" {% if brand_tier == 'B' %}selected{% endif %}>B</option>
+            <option value="C" {% if brand_tier == 'C' %}selected{% endif %}>C</option>
+            <option value="D" {% if brand_tier == 'D' %}selected{% endif %}>D</option>
+        </select>
+
+        <label for="Engine_CC">Engine CC:</label>
+        <input type="number" name="Engine CC" id="Engine_CC" placeholder="Engine CC" required value="{{ Engine_CC }}" />
+
+        <label for="vehicle_age">Age of Vehicle:</label>
+        <input type="number" name="vehicle_age" id="vehicle_age" placeholder="Age of Vehicle" required value="{{ vehicle_age }}"/>
+    
+        <button type="submit" class="btn btn-primary btn-block btn-large">Check Your Price</button>
+    </form>
+   <br>
+   <p>Assembled: {{ Assembled }}</p>
+   <p>Brand Tier: {{ brand_tier }}</p>
+   <p>Engine CC: {{ Engine_CC }}</p>
+   <p>Age of Vehicle: {{ vehicle_age }}</p>
+   <br>
+   Suggested Used Car Price: {{ prediction_text }}
+
+ </div>
+ 
+ <style>
+    /* Add horizontal lines between rows */
+    table tbody tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Add vertical lines between title tier and td groups */
+    table th {
+        border-right: 1px solid #ccc;
+    }
+
+    /* Remove right border for the last th in each row */
+    table tbody tr th:last-child {
+        border-right: none;
+    }
+</style>
+
+<h3>Car Brand Tiers Reference</h3>
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Tier S</strong></th>
+            <td>Lamborghini</td>
+            <td>Ferrari</td>
+            <td>McLaren</td>
+            <td>Bentley</td>
+            <td>Cadillac</td>
+            <td>Maserati</td>
+            <td>Porsche</td>
+            <td>Land Rover</td>
+            <td>Jeep</td>
+            <td>Volvo</td>
+        </tr>
+        <tr>
+            <th><strong>Tier A</strong></th>
+            <td>Mercedes-Benz</td>
+            <td>BMW</td>
+            <td>BYD</td>
+            <td>Jaguar</td>
+            <td>Great Wall</td>
+            <td>MINI</td>
+            <td>Lexus</td>
+            <td>Audi</td>
+            <td>Maxus</td>
+        </tr>
+        <tr>
+            <th><strong>Tier B</strong></th>
+            <td>Toyota</td>
+            <td>Ford</td>
+            <td>Mazda</td>
+            <td>Volkswagen</td>
+            <td>Honda</td>
+            <td>Infiniti</td>
+            <td>Subaru</td>
+            <td>Mitsubishi</td>
+            <td>Hino</td>
+        </tr>
+        <tr>
+            <th><strong>Tier C</strong></th>
+            <td>CAM</td>
+            <td>Isuzu</td>
+            <td>Hyundai</td>
+            <td>Chevrolet</td>
+            <td>Citroen</td>
+            <td>Nissan</td>
+            <td>Renault</td>
+            <td>Kia</td>
+            <td>Peugeot</td>
+        </tr>
+        <tr>
+            <th><strong>Tier D</strong></th>
+            <td>Shineray</td>
+            <td>Daihatsu</td>
+            <td>Inokom</td>
+            <td>Perodua</td>
+            <td>Proton</td>
+            <td>Suzuki</td>
+            <td>Fiat</td>
+            <td>Chery</td>
+            <td>Ssangyong</td>
+            <td>Naza</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<p>This Python web app is a demonstration of API implementation using a machine learning model Random Forest Regressor. The model has been trained with a dataset containing 8000 used car listings from the Malaysian market. The web app is built with Flask for the backend and HTML for the frontend.</p>
+<p>Please note that this is a test application, and I recommend not relying solely on its predictions for car pricing decisions. For more information and access to the source code, you can visit my <a href="https://github.com/HazmanNaim" target="_blank">GitHub profile</a>.</p>
+<p>For reference documentation on Flask, you can visit the <a href="https://flask.palletsprojects.com/en/2.1.x/" target="_blank">Flask documentation</a>, and for HTML, you can refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML documentation</a>.</p>
+
+</body>
+</html>
