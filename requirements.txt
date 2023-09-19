@@ -19,7 +19,6 @@ pytz
 scikit-learn
 scipy
 six
-sklearn
 threadpoolctl
 tzdata
 Werkzeug
