@@ -6,7 +6,6 @@ import pandas as pd
 
 # Create flask app
 app = Flask(__name__)
-app.secret_key = 'thisisakey'
 
 # Load model
 model = joblib.load(open("model.pkl", "rb"))
