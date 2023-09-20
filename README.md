@@ -29,7 +29,7 @@ One of the key questions addressed in this project is, "What determines most of 
 ### Project Flow
 The project follows a structured workflow consisting of the following steps:
 
-1. **Web Scraping**: A total of 8000 listings of used car prices in the Malaysian market were collected through web scraping. Each listing contains valuable information about the cars, such as brand, engine cc, year, mileage, and price.
+1. **Web Scraping**: A total of 8000 listings of used car prices in the Malaysian market were collected through web scraping. Each listing contains information about the cars, such as brand, engine cc, year, mileage, and price.
 
 2. **Data Cleaning**: The collected data underwent extensive data cleaning, which involved data imputation and feature engineering. This step was crucial for preparing the dataset for model development.
 
@@ -49,7 +49,7 @@ Throughout the course of this project, several valuable lessons were learned:
 ### Challenges Faced
 The project presented its fair share of challenges:
 
-- **Slow Web Scraping**: Web scraping was slower than anticipated, and interruptions occurred, limiting the dataset to 8000 listings.
+- **Slow Web Scraping**: Web scraping was slower than anticipated, and interruptions occurred, limiting the dataset to only 8000 listings.
 
 - **Data Cleaning Complexity**: Cleaning and preprocessing the data consumed a significant portion of the project's time due to the diverse nature of the data.
 
@@ -58,14 +58,12 @@ The project presented its fair share of challenges:
 ### Future Goals
 While the project has achieved its primary objectives, there are several future goals and improvements that can be considered:
 
-- **Data Collection**: Efforts can be made to collect a larger dataset to further improve model accuracy.
+- **Data Collection**: Efforts can be made to collect a larger dataset to further improve model accuracy on predicting more generalized data.
 
 - **Cloud Deployment**: Deploying the web app to a cloud hosting platform would make it accessible from anywhere and enhance its scalability.
-
-- **Feature Engineering**: Further exploration of feature engineering techniques may enhance the model's predictive power by capturing additional nuances in used car pricing.
 
 ### Conclusion
 The project "Predicting Used Car Prices in the Malaysian Market" successfully developed a machine learning model that can predict the prices of used cars based on a dataset collected through web scraping. Despite challenges in data collection, cleaning, and web development, the project achieved its objectives and provides a foundation for future improvements and enhancements. Understanding the determinants of used car prices in the Malaysian market is valuable for both buyers and sellers in making informed decisions.
 
 ### Additional Notes
-- During the model deployment to the web app, it's worth noting that only half of the features were chosen for deployment compared to what was used during model training. This selective feature deployment was done as the primary goal of the model deployment phase was to practice skills and knowledge related to deploying machine learning models using Flask. Similarly, the web app's design was kept simple, as the primary focus was to demonstrate the model deployment process rather than creating an elaborate user interface.
+- During the model deployment to the web app, it is worth noting that only half of the features were chosen for deployment compared to what was used during model training. This selective feature deployment was done as the primary goal of the model deployment phase was to **practice skills and knowledge related to deploying machine learning models using Flask**. Similarly, the web app's design was kept simple, as the primary focus was to demonstrate the model deployment process rather than creating an elaborate user interface.
